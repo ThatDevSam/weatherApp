@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import {useWeatherContext} from '../context/weatherContext'
 import Favorites from "./Favorites";
 import {
@@ -8,16 +7,12 @@ import {
   Grid,
   Snackbar,
   Alert,
+  Backdrop,
+  CircularProgress,
+  Typography,
+  IconButton,
+  styled,
 } from '@mui/material'
-import Button from '@mui/material/Button';
-import Backdrop from '@mui/material/Backdrop';
-import CircularProgress from '@mui/material/CircularProgress';
-import { Gradient } from "@mui/icons-material";
-import { blue, yellow } from "@mui/material/colors";
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 
 const WeatherDisplay = () => {

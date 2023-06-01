@@ -1,11 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {useWeatherContext} from '../context/weatherContext'
-import {
-  Container,
-  Box,
-  Grid,
-} from '@mui/material'
-import Button from '@mui/material/Button';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 
@@ -16,7 +10,6 @@ const Loading = () => {
         weatherError,
         weatherLoading
       } = useWeatherContext()
-    
 
     const [open, setOpen] = React.useState(false);
     
