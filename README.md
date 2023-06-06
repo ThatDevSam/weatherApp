@@ -11,7 +11,7 @@ touch .env
 VITE_API_KEY=<Your API key goes here.>
 ```
 
-### Run the following command from the root direct of the project in your terminal to install the dependenc>
+### Run the following command from the root direct of the project in your terminal to install the dependencies.
 ```
 npm install
 ```
