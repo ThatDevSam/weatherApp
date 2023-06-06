@@ -28,10 +28,8 @@ const initialState = {
 }
 
 const formatWeatherDataApiUrl = (searchInfo) => {
-
     let apiURL = ''   
-
-    if(searchInfo.lat  && searchInfo.lon) {
+    if(searchInfo.lat  && searchInfo.lon) {//Search with lat and lon
         apiURL = `lat=${searchInfo.lat}&lon=${searchInfo.lon}&appid=${import.meta.env.VITE_API_KEY}&units=${"imperial"}`
     } 
     else if (searchInfo.state) { //If searching within the US then the state field must be included in the api URL.
@@ -96,10 +94,8 @@ export const WeatherProvider = ({children}) => {
             }    
             dispatch({type: GET_FAVORITES_SUCCESS, payload: favoritesData})
         } catch (error) {
-            // console.log(error)
             dispatch({type: GET_FAVORITES_ERROR})
         }
-        
     }
 
     const deleteFavorite = async(cityID) => {
@@ -108,10 +104,9 @@ export const WeatherProvider = ({children}) => {
                 return true //Return true to keep the objects that do pass the test in the new array.
             } else {
                 localStorage.removeItem(city.city)
-                return false //Return a false to remove the object that didn't pass from the array.
+                return false //Return false to remove the object that didn't pass from the array.
             }
         })
-        //Update favoritesLocationData with newFavorites array.
         dispatch({type: DELETE_FAVORITE, payload: newFavorites})
     }
 
@@ -131,7 +126,7 @@ export const WeatherProvider = ({children}) => {
     )
 }
 
-//Context hook that will components to read an update state.
+//Context hook
 export const useWeatherContext = () => {
     return useContext(WeatherContext)
 }
